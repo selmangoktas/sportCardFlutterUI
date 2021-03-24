@@ -34,18 +34,19 @@ class _SportCardState extends State<SportCard> {
         child: Container(
           child: Stack(
             children: [
-              Container(
+              /*  Container(
                 alignment: Alignment.center,
+                margin: EdgeInsets.zero,
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.red[900],
                   image: DecorationImage(
-                    image: AssetImage('assets/gs.png'),
+                    image: AssetImage('assets/club/gs.png'),
                     fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
+                     colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.15), BlendMode.dstATop),
                   ),
                 ),
-              ),
+              ),*/
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -88,7 +89,8 @@ class _SportCardState extends State<SportCard> {
                             height: MediaQuery.of(context).size.height,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage('assets/falcoa.png'),
+                                colorFilter: ColorFilter.srgbToLinearGamma(),
+                                image: AssetImage('assets/player/falcoa.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -108,7 +110,7 @@ class _SportCardState extends State<SportCard> {
                                   'Rademel',
                                   style: GoogleFonts.lato(
                                     color: Colors.white,
-                                    fontSize: 50,
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -116,7 +118,7 @@ class _SportCardState extends State<SportCard> {
                                   'Falcao',
                                   style: GoogleFonts.lato(
                                     color: Colors.white,
-                                    fontSize: 50,
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -133,7 +135,7 @@ class _SportCardState extends State<SportCard> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Image.asset(
-                          'assets/gs.png',
+                          'assets/club/gs.png',
                           width: 50,
                           height: 50,
                         ),
@@ -165,65 +167,65 @@ class _SportCardState extends State<SportCard> {
             children: [
               InkWell(
                 onTap: () {
-                  print('Home Tıklandı');
+                  print('Bkj Tıklandı');
                 },
                 child: Container(
                   width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/gs.png'),
+                      image: AssetImage('assets/club/bjk.png'),
                     ),
                   ),
                 ),
               ),
               InkWell(
                 onTap: () {
-                  print('Home Tıklandı');
+                  print('Gs Tıklandı');
                 },
                 child: Container(
                   width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/gs.png'),
+                      image: AssetImage('assets/club/gs.png'),
                     ),
                   ),
                 ),
               ),
               InkWell(
                 onTap: () {
-                  print('Home Tıklandı');
+                  print('Konya Tıklandı');
                 },
                 child: Container(
                   width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/gs.png'),
+                      image: AssetImage('assets/club/konya.png'),
                     ),
                   ),
                 ),
               ),
               InkWell(
                 onTap: () {
-                  print('Home Tıklandı');
+                  print('Fb Tıklandı');
                 },
                 child: Container(
                   width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/gs.png'),
+                      image: AssetImage('assets/club/fb.png'),
                     ),
                   ),
                 ),
               ),
               InkWell(
                 onTap: () {
-                  print('Home Tıklandı');
+                  print('trabzon Tıklandı');
                 },
                 child: Container(
                   width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/gs.png'),
+                      image: AssetImage('assets/club/trabzon.png'),
                     ),
                   ),
                 ),

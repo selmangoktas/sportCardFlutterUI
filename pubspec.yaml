@@ -36,3 +36,5 @@ flutter:
   assets:
     - assets/
     - assets/user/
+    - assets/club/
+    - assets/player/

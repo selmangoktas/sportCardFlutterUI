@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gradient_colors/flutter_gradient_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,83 +13,224 @@ class _SportCardState extends State<SportCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        textDirection: TextDirection.rtl,
-        fit: StackFit.loose,
-        clipBehavior: Clip.hardEdge,
-        children: [
-          //buildGradientPositioned(context),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Text('Flutter'),
+      ),
+      drawer: Container(),
+      body: Container(
+        margin: EdgeInsets.only(bottom: 0),
+        padding: EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.red[900],
+              Colors.red[500],
+            ],
+          ),
+        ),
+        child: Container(
+          child: Stack(
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '2020-21',
-                    style: GoogleFonts.oswald(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
+              Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  image: DecorationImage(
+                    image: AssetImage('assets/gs.png'),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.15), BlendMode.dstATop),
                   ),
-                  Text(
-                    '9/100',
-                    style: GoogleFonts.oswald(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+                ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image(
-                    image: AssetImage("assets/ahmet.jpg"),
-                    width: 50,
-                    height: 50,
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      children: [
+                        Text(
+                          '2020-21',
+                          style: GoogleFonts.hiMelody(
+                            color: Colors.white.withAlpha(100),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '9/100',
+                          style: GoogleFonts.lato(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Text(
-                    '9',
-                    style: GoogleFonts.oswald(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    flex: 5,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            alignment: Alignment.topCenter,
+                            margin: EdgeInsets.zero,
+                            width: MediaQuery.of(context).size.width * 2,
+                            height: MediaQuery.of(context).size.height,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/falcoa.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            alignment: Alignment.topCenter,
+                            margin: EdgeInsets.zero,
+                            padding: EdgeInsets.zero,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Rademel',
+                                  style: GoogleFonts.lato(
+                                    color: Colors.white,
+                                    fontSize: 50,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  'Falcao',
+                                  style: GoogleFonts.lato(
+                                    color: Colors.white,
+                                    fontSize: 50,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/gs.png',
+                          width: 50,
+                          height: 50,
+                        ),
+                        Text(
+                          '9/100',
+                          style: GoogleFonts.lato(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ],
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Container(
-                child: Image(
-                  image: AssetImage("assets/falcoa.png"),
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+              InkWell(
+                onTap: () {
+                  print('Home Tıklandı');
+                },
+                child: Container(
+                  width: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/gs.png'),
+                    ),
+                  ),
                 ),
               ),
-              Container(
-                child: Text(
-                  '2020-21',
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
+              InkWell(
+                onTap: () {
+                  print('Home Tıklandı');
+                },
+                child: Container(
+                  width: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/gs.png'),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('Home Tıklandı');
+                },
+                child: Container(
+                  width: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/gs.png'),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('Home Tıklandı');
+                },
+                child: Container(
+                  width: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/gs.png'),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('Home Tıklandı');
+                },
+                child: Container(
+                  width: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/gs.png'),
+                    ),
                   ),
                 ),
               ),
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -99,11 +242,12 @@ class _SportCardState extends State<SportCard> {
         width: MediaQuery.of(context).size.width - 10,
         height: MediaQuery.of(context).size.height - 10,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomRight,
-          colors: GradientColors.red,
-        )),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: GradientColors.red,
+          ),
+        ),
       ),
     );
   }
